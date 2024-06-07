@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script type=""></script>
+
+<title>Insert title here</title>
+</head>
+<body>
+<h1 class="text-center">Welcome <span th:text="${stholder.name}"></span></h1>
+<!-- <h3 class="text-center" th:text="${st.type}"></h3> -->
+
+ <div  class="container mt-5">
+ 
+ <table th:if="${stholder.type} == 'SALES'" class="table table-hover">
+  <thead>
+    <tr>
+      
+      <!-- <th class="text-center" scope="col">Domain</th> -->
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     
+      <td class="text-center"><a th:href="@{/user/viewcustomers}" ><button class="btn btn-primary"><strong>Customer Management</strong></button></a></td>
+       <td><a th:href="@{/user/addcustomer}" ><button class="btn btn-primary">Add customers</button></a></td>  
+    </tr>
+    
+    <tr>
+    <td class="text-center"><a th:href="@{/user/viewbills}"><button class="btn btn-primary"><strong>Billing Management</strong></button></a></td>
+     <td><a th:href="@{/user/bill}" ><button class="btn btn-primary">Add Bills</button></a></td>  
+    </tr>
+    
+     <!-- ------------------------ -->
+   
+    <tr>
+     
+    </tr>
+  </tbody>
+</table>
+
+
+<table th:if="${stholder.type} == 'HR'" class="table table-hover">
+  <thead>
+    <tr>
+      
+      <th class="text-center" scope="col">Domain</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     
+      <td class="text-center"><a th:href="@{/user/viewpayrolls}" ><button class="btn btn-primary"><strong>Payroll Management</strong></button></a></td>
+      <td><a th:href="@{/user/payroll}" ><button class="btn btn-primary">Add payrolls</button></a></td> 
+    </tr>
+    
+     <!-- ------------------------ -->
+   
+  </tbody>
+</table>
+
+
+
+<table th:if="${stholder.type} == 'ACCOUNTANT'" class="table table-hover">
+  <thead>
+    <tr>
+      
+      <th class="text-center" scope="col"><h3>Domain</h3></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     
+      <td class="text-center"><a th:href="@{/user/viewpayrolls}" ><button class="btn btn-primary"><strong>Payroll Management</strong></button></a></td>
+      <!-- <td><a><button class="btn btn-primary">View</button></a></td>  -->
+    </tr>
+    
+     <!-- ------------------------ -->
+     
+     
+     <tr>
+    <td class="text-center"><a th:href="@{/user/viewbills}"><button class="btn btn-primary"><strong>Billing Management</strong></button></a></td>
+     
+    </tr>
+   
+  </tbody>
+</table>
+
+
+<table th:if="${stholder.type} == 'ADMINISTRATION'" class="table table-hover">
+  <thead>
+    <tr>
+      
+      <th class="text-center" scope="col">Domain</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     
+      <td class="text-center"><a th:href="@{/user/viewusers}"><button class="btn btn-primary"><strong>User Management</strong></button></a></td>
+     <td><a th:href="@{/user/usermanage}" ><button class="btn btn-primary">Add User</button></a></td> 
+    </tr>
+    
+     <!-- ------------------------ -->
+   
+  </tbody>
+</table>
+ 
+ </div>
+
+</body>
+</html>
